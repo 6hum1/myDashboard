@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-KPI Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="fireBaseAuth.js"></script>
+</head>
+<body>
+    <div class="main">
+        <h1>Login</h1>
+        <p id="error-message"></p>
+        <form  id="form">
+            <div  class="messageDiv" style="display: none;" id="login"></div>
+            <div>
+                <label for="email">
+                    <span>@</span>
+                </label>
+                <input type="email" name="email" id="email" placeholder="Email">
+            </div>
+            <div>
+                <label for="password">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm240-200q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80Z"></path></svg>
+                </label>
+                <input type="password" name="pass" id="password" placeholder="Password">
+            </div>
+
+            <button class="submit-btn" id="form-btn">LOGIN</button>
+        </form>
+        <p>New here ? <a href="./index.html">Create an Account</a></p>
+    </div>
+    <script src="fireBaseAuth.js" type="module"></script>
+</body>
+</html>
