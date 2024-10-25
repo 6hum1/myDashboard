@@ -1,188 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>My Dashboard</title>
-    <link rel="stylesheet" href="myDashBoardStyle.css">
-</head>
-<body>
+    <link rel="stylesheet" href="myDashBoardStyle.css" />
+  </head>
+  <body>
     <div class="main">
-        <div class="sidebar-menu">
-            <div class="black-cover">
-                <div class="head">
-                    <div class="heading-info">
-                        <i class="fa-brands fa-react"></i>
-                        <a href="#">CREATIVE</a>
-                    </div>
-                    <div class="line"></div>
-                </div>
-                
-               <div class="userName">
-                <div class="user-name-info">
-                    <img src="./assets/profile.jpg" alt="">
-                    <a href="#">Bhumi</a>
-                </div>
-                <div class="line"></div>
-               </div>
-                
-                <div class="menu">
-                    <ul>
-                        <li>
-                            <i class="fa-solid fa-image"></i>
-                            <a href="">Page</a>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-table-cells"></i>
-                            <a href="./inProgress.html">Components</a>
-                        </li>
-                        <li>
-                            <i class="fa-brands fa-wpforms"></i>
-                            <a href="./inProgress.html">Forms</a>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-chart-line"></i>
-                            <a href="./inProgress.html">Charts</a>
-                        </li>
-                        <li>
-                            <i class="fa-regular fa-calendar"></i>
-                            <a href="./inProgress.html">Calendar</a>
-                        </li>
-                    </ul>
-                </div>
+      <div class="sidebar-menu">
+        <div class="black-cover">
+          <div class="head">
+            <div class="heading-info">
+              <i class="fa-brands fa-react"></i>
+              <a href="#">CREATIVE</a>
+            </div>
+            <div class="line"></div>
+          </div>
 
+          <div class="userName">
+            <div class="user-name-info">
+              <img src="./assets/profile.jpg" alt="" />
+              <a href="#">Bhumi</a>
             </div>
+            <div class="line"></div>
+          </div>
+
+          <div class="menu">
+            <ul>
+              <li>
+                <i class="fa-solid fa-image"></i>
+                <a href="">Page</a>
+              </li>
+              <li>
+                <i class="fa-solid fa-table-cells"></i>
+                <a href="./inProgress.html">Components</a>
+              </li>
+              <li>
+                <i class="fa-brands fa-wpforms"></i>
+                <a href="./inProgress.html">Forms</a>
+              </li>
+              <li>
+                <i class="fa-solid fa-chart-line"></i>
+                <a href="./inProgress.html">Charts</a>
+              </li>
+              <li>
+                <i class="fa-regular fa-calendar"></i>
+                <a href="./inProgress.html">Calendar</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="dashboard">
-            <div class="navbar">
-                <div class="nav-left">
-                    <button class="fa-solid fa-ellipsis-vertical"></button>
-                    <h2>Dashboard</h2>
-                </div>
-                <div class="nav-right">
-                    <input type="text" name="" id="search" placeholder="Search">
-                    <label for="search"><button class="fa-solid fa-magnifying-glass"></button></label>
-                    
-                    <i class="fa-solid fa-bell"></i>
-                    <i class="fa-solid fa-user"></i>
-                </div>
+      </div>
+      <div class="dashboard">
+        <div class="navbar">
+          <div class="nav-left">
+            <button class="fa-solid fa-ellipsis-vertical"></button>
+            <h2>Dashboard</h2>
+          </div>
+          <div class="nav-right">
+            <input type="text" name="" id="search" placeholder="Search" />
+            <label for="search"
+              ><button class="fa-solid fa-magnifying-glass" id="searchButton"></button
+            ></label>
+            <div id="result"></div>
+
+            <i class="fa-solid fa-bell  " id="notification"></i>
+            <i class="fa-solid fa-user " id="loginButton"></i>
+            <div id="notificationPopup" class="popup">You have no new notifications.</div>
+          </div>
+        </div>
+        <div class="main-content">
+          <div class="card-box">
+            <div class="card">
+              <div class="card-div1">
+                <h1>8.2K</h1>
+                <h4>Total Users</h4>
+              </div>
+              <div class="card-div2">
+                <i class="fa-solid fa-user-check"></i>
+              </div>
             </div>
-            <div class="main-content">
-                <div class="card-box">
-                    <div class="card">
-                        <div class="card-div1">
-                            <h1>8.2K</h1>
-                            <h4>Total Users</h4>
-                        </div>
-                        <div class="card-div2">
-                            <i class="fa-solid fa-user-check"></i>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-div1">
-                            <h1>1.5K</h1>
-                            <h4>Active Sessions</h4>
-                        </div>
-                        <div class="card-div2">
-                            <i class="fa-solid fa-hourglass-end"></i>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-div1">
-                            <h1>35%</h1>
-                            <h4>Bounce rate</h4>
-                        </div>
-                        <div class="card-div2">
-                            <i class="fa-solid fa-repeat"></i>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-div1">
-                            <h1>4.2%</h1>
-                            <h4>Conversion Rate</h4>
-                        </div>
-                        <div class="card-div2">
-                            <i class="fa-solid fa-chart-line"></i>
-                        </div>
-                    </div>
+            <div class="card">
+              <div class="card-div1">
+                <h1>1.5K</h1>
+                <h4>Active Sessions</h4>
+              </div>
+              <div class="card-div2">
+                <i class="fa-solid fa-hourglass-end"></i>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-div1">
+                <h1>35%</h1>
+                <h4>Bounce rate</h4>
+              </div>
+              <div class="card-div2">
+                <i class="fa-solid fa-repeat"></i>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-div1">
+                <h1>4.2%</h1>
+                <h4>Conversion Rate</h4>
+              </div>
+              <div class="card-div2">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+            </div>
+          </div>
+          <div class="flex-box">
+            <div class="div1">
+              <div class="div-header">
+                <h2>Production Sale Distribution(%)</h2>
+                <div class="line"></div>
+              </div>
+              <div class="div1-header-buttons">
+                <div class="btn-left">
+                  <button class="filter-btn">
+                    <a href="">Month</a>
+                    <i class="fa-solid fa-caret-down"></i>
+                  </button>
+                  <button class="filter-btn">
+                    <a href="">Range</a>
+                    <i class="fa-solid fa-caret-down"></i>
+                  </button>
+                  <button class="filter-btn blue-btn">
+                    <a href="">Last</a>
+                    <i class="fa-solid fa-caret-down"></i>
+                  </button>
+                  <button class="filter-btn red-btn">
+                    <a href="">Current</a>
+                    <i class="fa-solid fa-caret-down"></i>
+                  </button>
                 </div>
-                <div class="flex-box">
-                    <div class="div1">
-                        <div class="div-header">
-                            <h2>Production Sale Distribution(%)</h2>
-                            <div class="line"></div>
-                        </div>
-                        <div class="div1-header-buttons">
-                            <div class="btn-left">
-                                <button class="filter-btn">
-                                    <a href="">Month</a>
-                                    <i class="fa-solid fa-caret-down"></i>
-                                </button>
-                                <button class="filter-btn">
-                                    <a href="">Range</a>
-                                    <i class="fa-solid fa-caret-down"></i>
-                                </button>
-                                <button class="filter-btn blue-btn">
-                                    <a href="">Last</a>
-                                    <i class="fa-solid fa-caret-down"></i>
-                                </button>
-                                <button class="filter-btn red-btn">
-                                    <a href="">Current</a>
-                                    <i class="fa-solid fa-caret-down"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="chart">
-                            <canvas id="barChart" height="400px" width ="600px"></canvas>
-                        </div>
-                       
-                    </div>
-                    <div class="div2">
-                        <div class="div2-left">
-                            <div class="div-header">
-                                <h2>Performance Metrics</h2>
-                                <div class="line"></div>
-                            </div>
-                            <canvas id="radarChart" height="400px" width="450px"></canvas>    
-                        </div>
-                        <div class="div2-right">
-                            <div class="div-header">
-                                <h2>Company Sales</h2>
-                                <div class="line"></div>
-                            </div>
-                            <canvas id="doughnutChart" height="400px" width="450px"></canvas>
-                        </div>
-                        
-                    </div>
-                    <div class="div2">
-                       <div class="div2-left">
-                        <div class="div-header">
-                            <h2>Sales and Profit</h2>
-                            <div class="line"></div>
-                        </div>
-                            <canvas id="mixedChart" height="400px" width="450px"></canvas>
-                        </div>
-                        <div class="div2-right">
-                            <div class="div-header">
-                                <h2>Revenue Vs Ad Spend</h2>
-                                <div class="line"></div>
-                            </div>
-                            <canvas id="scatterChart" height="400px" width="450px"></canvas>
-                        </div>
-    
-                    </div>
+              </div>
+              <div class="chart">
+                <canvas id="barChart" height="400px" width="600px"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="two-charts">
+            <div class="div2">
+              <div class="div2-left">
+                <div class="div-header">
+                  <h2>Performance Metrics(%)</h2>
+                  <div class="line"></div>
                 </div>
-                
-                   
+                <canvas id="radarChart" height="400px" width="450px"></canvas>
+              </div>
+              <div class="div2-right">
+                <div class="div-header">
+                  <h2>Company Sales(%)</h2>
+                  <div class="line"></div>
+                </div>
+                <canvas id="doughnutChart"></canvas>
+              </div>
+            </div>
+
+            <div class="div3">
+              <div class="div3-left">
+                <div class="div-header">
+                  <h2>Sales and Profit(%)</h2>
+                  <div class="line"></div>
+                </div>
+                <canvas id="mixedChart" height="400px" width="450px"></canvas>
+              </div>
+              <div class="div3-right">
+                <div class="div-header">
+                  <h2>Revenue Vs Ad Spend(%)</h2>
+                  <div class="line"></div>
+                </div>
+                <canvas id="scatterChart" height="400px" width="450px"></canvas>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-    
-    <script src="dashboard.js"></script> 
-</body>
+
+    <script src="dashboard.js"></script>
+  </body>
 </html>

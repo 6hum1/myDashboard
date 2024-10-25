@@ -89,41 +89,84 @@ const mixedChart = new Chart(mixedCtx, {
     ]
   },
   options: {
-    responsive: false, // Disable responsiveness to use fixed canvas size
-  }
-});
+    responsive: false, }
+}) ;
 
 
 
-// WebSocket Integration
+
 const socket = io('https://data.gdscnsut.com/');
 
-// Update all charts with WebSocket data
+
 socket.on('random_number', (data) => {
    console.log(data); 
-  // Update Bar Chart
+ 
   barChart.data.datasets[0].data = barChart.data.datasets[0].data.map(() => Math.random() * 100);
   barChart.update();
 
-  // Update Scatter Chart
+  
   scatterChart.data.datasets[0].data.push({
     x: Math.random() * 50000,
     y: Math.random() * 30000
   });
   scatterChart.update();
 
-  // Update Radar Chart
+
   radarChart.data.datasets[0].data = radarChart.data.datasets[0].data.map(() => Math.random() * 5);
   radarChart.update();
 
-  // Update Doughnut Chart
+  
   doughnutChart.data.datasets[0].data = [Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100];
   doughnutChart.update();
 
-  // Update mixed chart
+
 
   mixedChart.data.datasets[0].data = mixedChart.data.datasets[0].data.map(() => Math.random() * 100);
   mixedChart.data.datasets[1].data = mixedChart.data.datasets[1].data.map(() => Math.random() * 100);
   mixedChart.update();
 
+});
+
+document.getElementById("loginButton").addEventListener("click", function() {
+  const spinner = document.createElement("span");
+  spinner.classList.add("spinner");
+  this.appendChild(spinner);
+
+  setTimeout(() => spinner.remove(), 1500);
+});
+
+
+document.getElementById("notification").addEventListener("click", function() {
+  const notificationPopup = document.getElementById("notificationPopup");
+  if(notificationPopup.style.display == "none" || notificationPopup.style.display == ""){
+    notificationPopup.style.display = "block";
+
+    setTimeout(()=>{notificationPopup.style.display = "none"},1000)
+  }
+  else{
+    notificationPopup.style.display = "none";
+  }
+});
+
+  document.getElementById("searchButton").addEventListener("click", function() {
+    const searchInput = document.getElementById("search").value; 
+    const resultDiv = document.getElementById("result");
+
+    if (searchInput.trim() === "") {
+        resultDiv.innerHTML = "Please enter a something."; 
+        return;
+
+    }
+    else{
+      resultDiv.innerHTML = `You searched for: ${searchInput}`; 
+    }
+    
+
+    setTimeout(()=>{resultDiv.innerHTML = ""},1000);
+  });
+
+document.getElementById("search").addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+      document.getElementById("searchButton").click();
+  }
 });
